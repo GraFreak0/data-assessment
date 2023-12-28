@@ -35,7 +35,7 @@ services:
         - .env
     restart: always
     networks:
-            - ghost--
+            - ghost
 
 
   # Jupyter notebook
@@ -44,7 +44,7 @@ services:
         container_name: jupyter_container
         image: 'jupyter/pyspark-notebook:spark-3.2.0'
         networks:
-            - ghost--
+            - ghost
         ports:
           - "8888:8888"
         volumes:
@@ -64,5 +64,5 @@ volumes:
 
 # Network Bridge Connection
 networks:
-  ghost--:
+  ghost:
     driver: bridge
